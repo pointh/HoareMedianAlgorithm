@@ -43,5 +43,14 @@
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
         }
+
+        public static void ShowActualLists(List<int> less, List<int> pivots, List<int> more, int n)
+        {
+            Console.Write("Less:" + string.Join(",", less) + "::");
+            Console.Write("Pivots:" + string.Join(",", pivots) + "::");
+            Console.WriteLine("More:" + string.Join(",", more) + "::" + n);
+        }
+
     }
+
 }
