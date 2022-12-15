@@ -11,8 +11,6 @@
 
             while (left < right)
             {
-                //ShowActualArray(data, idxLeft, idxRight, left, right, n);
-
                 x = data[n];  // prvek aktuálně na hledaném pořadí
                 idxLeft = left;
                 idxRight = right;
@@ -22,13 +20,13 @@
                     while (data[idxLeft] < x) // zvyšuj index zleva, dokud jsou vlevo prvky menší než x
                     {
                         idxLeft++;
-                        //Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "posun zleva");
+                        Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "posun zleva");
                     }
 
                     while (data[idxRight] > x)// snižuj index zprava, dokud jsou prvky vpravo od x větší než x
                     {
                         idxRight--;
-                        //Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "posun zprava");
+                        Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "posun zprava");
                     }
 
 
@@ -55,12 +53,16 @@
 
                 Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "překrytí indexů");
 
-                if (idxRight < n)  // příliš mnoho prvků je za prvkem data[n]
+                if (idxRight < n) // příliš mnoho prvků je za prvkem data[n]
+                {
                     left = idxLeft;  // hledáme v intervalu napravo od data[n]
-                if (idxLeft > n)   // příliš mnoho prvků je před prvkem data[n]
+                    Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "posun levá strana");
+                }
+                if (idxLeft > n) // příliš mnoho prvků je před prvkem data[n]
+                {
                     right = idxRight; // hledáme v interval nalevo od data[n]
-
-                Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "změna mezí");
+                    Helpers.ShowActualArray(data, idxLeft, idxRight, left, right, n, "posun pravá strana");
+                }
             }
             return data[n];
         }

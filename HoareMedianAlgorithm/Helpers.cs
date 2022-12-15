@@ -19,7 +19,6 @@
                 if (i == rightIndex) { Console.ForegroundColor = ConsoleColor.Yellow; }
 
                 if (i >= spanLeft && i <= spanRight) { Console.BackgroundColor = ConsoleColor.DarkGray; }
-                //if (i <= spanRight) { Console.BackgroundColor = ConsoleColor.DarkRed; }
 
                 Console.Write($"{data[i],posWidth}");
                 Console.ForegroundColor = ConsoleColor.White;
@@ -27,12 +26,8 @@
             }
             Console.WriteLine();
 
-            //indexLabel[(posWidth) * leftIndex + posWidth - 1] = '^';
             string leftIndexLabel = $"{leftIndex}^";
             leftIndexLabel.CopyTo(0, indexLabel, posWidth * leftIndex + posWidth - 2, leftIndexLabel.Length);
-
-            //indexLabel[(posWidth) * leftIndex + 3] = $"^{leftIndex}"[0];
-            //indexLabel[(posWidth) * rightIndex + posWidth - 1] = '|';
 
             string rightIndexLabel = $"|{rightIndex}";
             rightIndexLabel.CopyTo(0, indexLabel, posWidth * rightIndex + posWidth - 1, rightIndexLabel.Length);
